@@ -13,6 +13,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex  # Cambia con il nome corretto del file .tex
+          latexmk_use_xelatex: true
 
       - name: Commit PDF to repository
         run: |
