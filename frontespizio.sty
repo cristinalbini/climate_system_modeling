@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{frontespizio}[2021/12/27 UniTN Frontespizio Package]
- 
+
 \RequirePackage{setspace}
 \RequirePackage{etoolbox}
 \RequirePackage{tikz}
@@ -212,7 +212,7 @@
             \ifdefined\@DataEsame 
                 \vspace{10mm}
                 \raggedright
-                {\large\textsc{Date:} \@DataEsame, \href{https://niccolozanotti.github.io/climate-modeling/notes_overleaf.pdf}{download latest}}
+                {\large\textsc{Last updated:} \@DataEsame, \href{main.pdf}{download latest}}
                 \rule{\textwidth}{0.5mm}
             \fi
         \end{center}
@@ -220,6 +220,10 @@
 }
 
 \newcommand{\makefrontpagealt}{
+    \FrontespizioAlt{}
+    \makefrontpage%
+    \undef\@FrontespizioAlt
+}
     \FrontespizioAlt{}
     \makefrontpage%
     \undef\@FrontespizioAlt
