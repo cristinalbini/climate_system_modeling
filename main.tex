@@ -3,36 +3,66 @@
 \input{Impaginazione/packages}
 
 \begin{document}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TITLE PAGE %%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\input{titlepage}
 
-     
-\input{Impaginazione/inizio}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FIRST PAGE ON THE LEFT %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\topskip0pt
+\vspace*{\fill}
+The contents of these notes stem from the course of Climate System Modeling taught by Prof. \textbf{Antonio Navarra}\footnote{\href{https://www.cmcc.it/people/navarra-a}{CMCC}, \href{https://www.unibo.it/sitoweb/antonio.navarra/en}{Unibo}}
+at University of Bologna for the academic year 2024/2025 and from his notes available at
+\href{https://wanderer.cmcc.it}{wanderer.cmcc.it}\footnote{
+	If prompted, use the credentials: \{ \texttt{user}: \texttt{cmcc}  ,
+	\texttt{psw}: \texttt{pD8phJg3e76J} \} }.
+The main textbook used to teach this course is \citet{Washington2005}.
+
+
+\vspace*{\fill}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
 \tableofcontents
 
 
 
-\include{capitoli/1.Physical description of climate system}
+\include{capitoli/intro}
 
 
-%\include{capitoli/2.Fundamental Equations}
+\include{capitoli/fund_equations}
 
 
-%\include{capitoli/3.Numerical methods used in atmospheric models}
+\include{capitoli/numerical_methods}
 
-%\include{capitoli/4.1Climate Models}
+\include{capitoli/climate_models}
 
-%\include{capitoli/4.Ocean Models}
+\include{capitoli/ocean_models}
 
-%\include{capitoli/5.Exploring Variability}
+\include{capitoli/exploring_variability}
 
-%\include{capitoli/6.SST forcing}
+\include{capitoli/sst_forcing}
 
-%\include{capitoli/7.Earth System Model}
+\include{capitoli/earth_system_model}
 
-%\include{capitoli/8.Theory of symmetric circulation}
+\include{capitoli/symmetric_circulation}
+
+\include{appendiceA}
 
 
 
-\input{Impaginazione/fine}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliography}
 
-\printindex
+
 \end{document}
