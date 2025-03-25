@@ -6,13 +6,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
-      - name: Upload PDF
-        uses: actions/upload-artifact@v3
-        with:
-          name: Compiled-PDF
-          path: main.pdf
+          root_file: main.tex  # Cambia con il nome corretto del file .tex
+
+      - name: Commit PDF to repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add main.pdf  # Cambia con il nome del PDF generato
+          git commit -m "Aggiornato PDF automaticamente" || echo "Nessuna modifica da commitare"
+          git push origin main --force
