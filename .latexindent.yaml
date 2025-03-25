@@ -1,0 +1,69 @@
+# .latexindent.yaml
+
+# General settings
+logfile: 'indent.log'               # Name of the log file
+overwrite: 1                        # Overwrite files by default (use -w option in latexindent)
+replacementText:                    # Placeholder text for ignored regions
+  default: '...'
+
+# Indentation settings
+defaultIndent: '    '               # Use 4 spaces for indentation
+preserveBlankLines: true            # Keep blank lines as is
+spaces: 4                           # Number of spaces per indent level (same as defaultIndent)
+
+# Environment-specific settings
+environments:
+  align:
+    - align                         # Indent content inside align environments
+    - align*                        # and align* environments.
+  verbatim:
+    - verbatim                      # Preserve content inside verbatim environments
+    - lstlisting                    # and lstlisting environments.
+
+# Commands to handle
+commands:
+  sections:
+    - chapter                       # Recognize \chapter as a sectioning command
+    - section
+    - subsection
+    - subsubsection
+    - paragraph
+    - subparagraph
+
+# Special handling of environments
+specialBeginEnd:                    # Rules for specific environments
+  itemize:
+    begin: '\begin{itemize}'
+    end: '\end{itemize}'
+    indentation: 1                  # Add 1 level of indentation inside itemize
+  enumerate:
+    begin: '\begin{enumerate}'
+    end: '\end{enumerate}'
+    indentation: 1                  # Add 1 level of indentation inside enumerate
+  tabular:
+    begin: '\begin{tabular}'
+    end: '\end{tabular}'
+    keepBlankLines: false           # Remove blank lines inside tabular
+
+# Ignored environments (content remains unchanged)
+verbatimEnvironments:
+  - verbatim
+  - lstlisting
+  - minted
+
+# Trailing whitespace
+removeTrailingWhitespace: true      # Automatically remove trailing whitespace
+
+# Line breaking rules
+breaklines: true                    # Enable line breaking
+maxLineLength: 80                   # Limit lines to 80 characters
+breakBeforeSectioning: false        # Avoid breaking before sectioning commands
+
+# Optional delimiters
+optionalArguments:
+  brackets:
+    opening: '['
+    closing: ']'
+  braces:
+    opening: '{'
+    closing: '}'
