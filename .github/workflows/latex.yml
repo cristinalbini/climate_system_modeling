@@ -14,18 +14,24 @@ jobs:
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: main.tex  # Cambia con il nome corretto del file .tex
           latexmk_use_xelatex: true
 
-      - name: Commit PDF to repository
+      - name: Set up Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add main.pdf
+
+      - name: Pull latest changes
+        run: |
+          git pull origin main --rebase  # Integra prima le modifiche remote
+
+      - name: Commit PDF to repository
+        run: |
+          git add main.pdf  # Cambia con il nome del PDF generato
           git commit -m "Aggiornato PDF automaticamente" || echo "Nessuna modifica da commitare"
 
       - name: Push changes
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/cristinalbini/climate_system_modeling.git
           git push origin main
-
