@@ -1,0 +1,64 @@
+% Header/Footer settings
+\pagestyle{empty}
+
+
+% Custom Title Format
+\titleformat{\section}[block]{\centering\bfseries\Large}{}{0pt}{}
+
+
+\begin{titlepage}
+
+	% Page setup
+	\newgeometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+	\setlength{\parindent}{0pt}
+
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{setup/unibo-red} % Replace with your logo image
+	\end{center}
+
+	\begin{center}
+		\Large UNIVERSITY OF BOLOGNA \\[0.5em]
+		\large DEPARTMENT OF PHYSICS AND ASTRONOMY \\[0.5em]
+		\large MASTER DEGREE IN SCIENCE OF CLIMATE \\[1em]
+		$\sim \cdot \sim$ \\[1em]
+		\large ACADEMIC YEAR 2024--2025
+	\end{center}
+
+	\vfill
+
+	\begin{center}
+		{\LARGE \textbf{CLIMATE SYSTEM MODELING}} \\[0.5em]
+		{\LARGE \textbf{NOTES}}
+	\end{center}
+
+	\vfill
+
+	\noindent
+	\begin{minipage}[t]{0.48\textwidth}
+		\raggedright
+		\textbf{Prof.} \\
+		Antonio Navarra
+	\end{minipage}%
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\raggedleft
+		\textbf{Author} \\
+		beautiful babies \\
+
+	\end{minipage}
+
+
+	\vfill
+
+	% Footer Section
+	\begin{center}
+		Last updated:
+		\today 
+	\end{center}
+
+	\restoregeometry
+
+\end{titlepage}
+
+
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
