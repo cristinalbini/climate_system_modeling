@@ -1,0 +1,79 @@
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[english]{babel}
+\usepackage{amsthm, amssymb, amsfonts}
+\usepackage{thmtools}
+\usepackage{pdfsync} % enables synctex
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=magenta,
+	citecolor=blue,
+	pdftitle={cm},
+	pdfpagemode=FullScreen,
+}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{environ}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins,breakable}
+%----------------------------------------------------------------------------------------
+%	CUSTOM PALATINO FONT
+%----------------------------------------------------------------------------------------
+% \usepackage{mathpazo} % Use the Palatino font by default
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY OPTIONS
+%----------------------------------------------------------------------------------------
+\RequirePackage[style=authoryear,
+	backend=biber,
+	natbib=true,
+	maxcitenames=2,
+	mincitenames=1,
+	dashed=false,
+	isbn=false,
+	url=false,
+	eprint=false,
+	doi=false,
+	uniquelist=minyear % prevent issue for references of the same first author (even in different years)
+]{biblatex}
+\addbibresource{bibliography.bib} % The filename of the bibliography
+
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+%----------------------------------------------------------------------------------------
+%	PERSONALLY ADDED PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{textcomp}
+\usepackage{subfigure}
+\usepackage{subcaption}
+\usepackage{relsize}
+\usepackage{svg} %% include svg images 
+\usepackage{siunitx} % for SI Units
+\usepackage[version=4]{mhchem} % chemical formulas
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.0cm, % Inner margin
+	outer=2.5cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=2.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
