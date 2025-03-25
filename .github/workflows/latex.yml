@@ -1,0 +1,18 @@
+name: Compile LaTeX Document
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: Compiled-PDF
+          path: main.pdf
