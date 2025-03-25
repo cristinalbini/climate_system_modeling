@@ -56,6 +56,17 @@ else
     exit 1
 fi
 
+
+# Pulisce i file temporanei
+latexmk -C
+
+# Compila con xelatex e gestisce la bibliografia con bibtex
+latexmk -xelatex -bibtex main.tex
+
+# Se vuoi forzare la compilazione anche in caso di errori, usa:
+# latexmk -xelatex -bibtex -f main.tex
+
+
 # Clean up old auxiliary files
 echo "Cleaning up old auxiliary files..."
 rm -f "${MAIN_FILE}".{aux,bbl,bcf,blg,log,lot,out,toc,run.xml,synctex.gz}
