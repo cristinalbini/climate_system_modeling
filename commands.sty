@@ -1,0 +1,84 @@
+%----------------------------------------------------------------------------------------
+%	USER DEFINED COMMANDS
+%----------------------------------------------------------------------------------------
+
+\usepackage{xparse}
+
+\newcommand{\lcm}{\operatorname{lcm}} % from the template
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% MATHEMATICAL %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dx}{\,\mathrm{d}\bm{x}}
+\newcommand{\dt}{\,\mathrm{d}t}
+\newcommand{\dxOne}{\,\mathrm{d}x}
+\newcommand{\dhOne}{ \,\mathrm{d}h}
+\newcommand{\dS}{\,\mathrm{d}S}
+\newcommand{\totalt}{\frac{\mathrm{d}}{\mathrm{dt}}}
+\newcommand{\totald}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\timed}[1]{\frac{\mathrm{d} #1}{\mathrm{d}t}}
+\newcommand{\partialt}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\partialphi}[1]{\frac{\partial #1}{\partial \phi}}
+\newcommand{\partiallambda}[1]{\frac{\partial #1}{\partial \lambda}}
+\newcommand{\partialx}[1]{\frac{\partial #1}{\partial x}}
+\newcommand{\partialy}[1]{\frac{\partial #1}{\partial y}}
+\newcommand{\partialz}[1]{\frac{\partial #1}{\partial z}}
+\newcommand{\materiald}[1]{\frac{\mathrm{D} #1}{\mathrm{D}t}}
+\newcommand{\objmateteriald}[1]{\frac{\mathcal{D} #1}{\mathcal{D}t}}
+\newcommand{\flux}{\mathcal{F}}
+\newcommand{\jump}[1]{ \{\{#1\}\} }
+\newcommand{\avg}[1]{ [[#1]] }
+\newcommand{\eq}[1]{Equation~#1}
+\newcommand{\timemean}[1]{\overline{#1}} %time mean
+\newcommand{\zonmean}[1]{[#1]} %zonal mean
+\newcommand{\fig}[1]{Figure~#1}
+\newcommand{\secref}[1]{Section~#1}
+\newcommand{\chapref}[1]{Chapter~#1}
+\newcommand{\tabref}[1]{Table~#1}
+\newcommand{\mat}[1]{\mathbf{#1}}      % matrix
+\newcommand{\tens}[2]{\mat{#1}:#2}     % tensor
+
+% Vector calculus
+\renewcommand{\vec}[1]{\ifmmode\bm{#1}\else\ensuremath{\bm{#1}}\fi} %vector
+\newcommand{\unitv}[1]{\bm{\hat{#1}}}  % unit vector
+\newcommand{\grad}[1]{\bm{\nabla} #1}
+\newcommand{\curl}[1]{\bm{\nabla} \times #1}
+\newcommand{\diverg}[1]{\bm{\nabla} \cdot #1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% SIUNITX %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareSIUnit[quantity-product = \,]{\psu}{psu}
+\newcommand{\qtyranged}[3]{\qtyrange[range-phrase = {--}]{#1}{#2}{#3}} % \qtyranged{<left range>}{<right range>}{<unit>}, e.g. 1-2 km
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% SOURCE FILES %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\chapterOneIntro}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/intro.tex}{intro.tex}}
+%\newcommand{\chapterTwoEqsProc}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/fund-eqs-processes.tex}{fund-eqs-processes.tex}}
+%\newcommand{\chapterThreeNumMeth}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/numerical-methods.tex}{numerical-methods.tex}}
+%\newcommand{\chapterFourClimMod}{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/climate_models.tex}{climate_models.tex}}
+%\newcommand{\chapterFourOceanMod}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/ocean-models.tex}{ocean-models.tex}}
+%\newcommand{\chapterFiveExploringSST}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/exploring-variability.tex}{exploring-variability.tex}}
+%\newcommand{\chapterSixSSTForcing}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/sst-forcings.tex}{sst-forcings.tex}}
+%\newcommand{\chapterSevenEarthMod}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/earth-system-models}{earth-system-models.tex}}
+%\newcommand{\chapterEightSymmCirc}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/theory-simm-circ.tex}{theory-simm-circ.tex}}
+%\newcommand{\chapterAppendix}{\href{https://github.com/cristinalbini/climate_sistem_modeling/blob/main/chapters/appendix.tex}{appendix.tex}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% MISCELLANEA %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lastupdated}[2]{%
+	% Parameters: #1 : YYYY-MM-DD HH:MM
+	\begin{flushright}
+		\vspace{-2em}
+		{\footnotesize\textcolor{gray}{%
+				Last updated: #1 \\
+				Source file: #2
+			}}
+	\end{flushright}
+	\vspace{1em} % Space after the timestamp
+}
+
+\newcommand{\CMCCreanalysis}{\href{http://c-glors.cmcc.it/index/index.html}{CMCC reanalysis}}
